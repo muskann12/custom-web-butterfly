@@ -1,0 +1,219 @@
+/* Root Variables */
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #f3c8ea;
+  --accent-color: #ffffff;
+  --background-color: #f7b4e3;
+  --text-color: #000000;
+}
+
+/* Body Background */
+body {
+  background-color: rgb(250, 178, 214);
+  margin: 0; /* Remove default body margin */
+}
+
+/* Page Layout */
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Change to auto for better spacing */
+  align-items: center;
+  justify-items: center;
+  min-height: 100vh;
+  padding: 80px;
+  gap: 64px;
+}
+
+/* Main Content */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Navbar Styling */
+.navbar {
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color)); /* Gradient background */
+  padding: 15px; /* Add some padding */
+}
+
+.navbar a {
+  color: white; /* White text color for links */
+  font-weight: bold; /* Make links bold */
+  font-size: 1.5rem; /* Size for navbar links */
+  margin: 0 15px; /* Space between links */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Button Styles */
+.ctas {
+  display: flex;
+  gap: 16px;
+}
+
+.ctas a {
+  appearance: none;
+  border-radius: 128px;
+  height: 48px;
+  padding: 0 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+a.primary {
+  background: var(--primary-color);
+  color: var(--accent-color);
+}
+
+a.secondary {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Footer Styling */
+.footer {
+  display: flex;
+  gap: 24px;
+  justify-content: center; /* Center links in footer */
+  padding: 10px 0;
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color)); /* Same gradient as navbar */
+  color: white; /* White text */
+}
+
+.social-links {
+  display: flex; /* Use flexbox for social links */
+  gap: 24px; /* Space between links */
+}
+
+.social-links a {
+  color: white; /* White text color for links */
+  text-decoration: none; /* Remove underline from links */
+  font-weight: bold; /* Make links bold */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .page {
+    padding: 32px;
+    padding-bottom: 80px;
+  }
+
+  .main {
+    align-items: center;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar a {
+    font-size: 1.2rem; /* Smaller font size for navbar on small screens */
+  }
+}
+
+/* About Page Styles */
+.about {
+  text-align: center; /* Center align text */
+  margin: 20px; /* Add margin */
+}
+
+.about h1 {
+  font-size: 3rem; /* Increase font size for the main heading */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+.about h2 {
+  font-size: 2rem; /* Subheading size */
+  margin-top: 20px; /* Space above subheading */
+  margin-bottom: 10px; /* Space below subheading */
+}
+
+.about p {
+  font-size: 1.25rem; /* Standard paragraph size */
+  margin-bottom: 20px; /* Space below paragraphs */
+}
+
+/* Butterflies Section */
+.butterflies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align the butterfly cards */
+  margin-top: 20px; /* Add some space above the butterflies section */
+}
+
+.butterfly-card {
+  margin: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 12px; /* Rounded corners */
+  padding: 15px;
+  background-color: #ffffff; /* White background for contrast */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+  max-width: 400px; /* Limit the width of the card */
+  overflow: hidden; /* Prevent overflow of child elements */
+}
+
+.butterfly-card img {
+  border-radius: 12px; /* Rounded image */
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.butterfly-card h3 {
+  margin: 10px 0 5px; /* Spacing adjustments */
+  font-size: 1.5em; /* Larger font size */
+  color: var(--text-color);
+}
+
+/* Contact Page Styles */
+.contact {
+  display: flex;
+  justify-content: center; /* Center the content */
+  align-items: flex-start; /* Align items at the start */
+  margin: 20px;
+  gap: 40px; /* Space between image and contact info */
+}
+
+.contact-content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* Max width for large screens */
+}
+
+.butterfly-image {
+  flex: 1; /* Allow this div to take available space */
+}
+
+.contact-info {
+  flex: 1; /* Allow this div to take available space */
+  text-align: left; /* Left-align the text */
+  max-width: 400px; /* Limit the width of the contact info */
+}
+
+.contact-info h1 {
+  text-align: center; /* Center the heading */
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  gap: 10px; /* Space between links */
+}
+
+/* Footer Adjustments */
+.footer {
+  display: flex;
+  gap: 24px;
+  justify-content: center; /* Center links in footer */
+  padding: 10px 0;
+}
+
+
