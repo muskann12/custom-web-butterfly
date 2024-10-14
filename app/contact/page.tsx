@@ -20,9 +20,9 @@ const ContactPage = () => {
             <input type="email" id="email" placeholder="Enter your email" required />
             <h2>Follow Us:</h2>
             <div className="social-links">
-              <a href="https://www.facebook.com/">Facebook</a>
-              <a href="https://www.instagram.com/">Instagram</a>
-              <a href="https://www.linkedin.com/">LinkedIn</a>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
             <button type="submit">Submit</button>
           </form>

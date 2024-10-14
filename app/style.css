@@ -1,22 +1,84 @@
 /* Root Variables */
+
+
+/* Navbar Styling */
+.navbar {
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  /* Adjust as needed */
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .nav-links {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    position: absolute; /* Position it above content */
+    top: 60px; /* Adjust based on navbar height */
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    padding: 15px;
+    gap: 10px; /* Space between links */
+  }
+
+  .nav-links.show {
+    display: flex; /* Show when toggled */
+  }
+
+  .menu-icon {
+    display: block; /* Show on mobile */
+  }
+}
+
 :root {
-  --primary-color: #ffffff;
+  --primary-color: #fee6e6;
   --secondary-color: #f3c8ea;
   --accent-color: #ffffff;
   --background-color: #f7b4e3;
   --text-color: #000000;
+  --footer-text-color: rgb(11, 11, 11);
 }
 
 /* Body Background */
 body {
   background-color: rgb(250, 178, 214);
-  margin: 0; /* Remove default body margin */
+  margin: 0; 
 }
 
 /* Page Layout */
 .page {
   display: grid;
-  grid-template-rows: auto 1fr auto; /* Change to auto for better spacing */
+  grid-template-rows: auto 1fr auto;
   align-items: center;
   justify-items: center;
   min-height: 100vh;
@@ -31,18 +93,10 @@ body {
   gap: 32px;
 }
 
-/* Navbar Styling */
-.navbar {
-  background: linear-gradient(to right, var(--secondary-color), var(--primary-color)); /* Gradient background */
-  padding: 15px; /* Add some padding */
-}
 
-.navbar a {
-  color: white; /* White text color for links */
-  font-weight: bold; /* Make links bold */
-  font-size: 1.5rem; /* Size for navbar links */
-  margin: 0 15px; /* Space between links */
-  text-decoration: none; /* Remove underline */
+/* Mobile Menu Icon */
+.menu-icon {
+  display: none;
 }
 
 /* Button Styles */
@@ -64,11 +118,16 @@ body {
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
+  transition: background 0.3s;
 }
 
 a.primary {
   background: var(--primary-color);
   color: var(--accent-color);
+}
+
+a.primary:hover {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 a.secondary {
@@ -79,21 +138,21 @@ a.secondary {
 .footer {
   display: flex;
   gap: 24px;
-  justify-content: center; /* Center links in footer */
+  justify-content: center;
   padding: 10px 0;
-  background: linear-gradient(to right, var(--secondary-color), var(--primary-color)); /* Same gradient as navbar */
-  color: white; /* White text */
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  color: var(--footer-text-color);
 }
 
 .social-links {
-  display: flex; /* Use flexbox for social links */
-  gap: 24px; /* Space between links */
+  display: flex;
+  gap: 24px;
 }
 
 .social-links a {
-  color: white; /* White text color for links */
-  text-decoration: none; /* Remove underline from links */
-  font-weight: bold; /* Make links bold */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* Responsive Design */
@@ -103,117 +162,173 @@ a.secondary {
     padding-bottom: 80px;
   }
 
-  .main {
-    align-items: center;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start; 
   }
 
   .navbar a {
-    font-size: 1.2rem; /* Smaller font size for navbar on small screens */
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .menu-icon {
+    display: block; 
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: auto; 
+  }
+
+  .ctas {
+    flex-direction: column; 
+  }
+
+  .ctas a {
+    width: 100%; 
+    margin: 5px 0; 
   }
 }
 
 /* About Page Styles */
 .about {
-  text-align: center; /* Center align text */
-  margin: 20px; /* Add margin */
+  text-align: center; 
+  margin: 20px; 
 }
 
 .about h1 {
-  font-size: 3rem; /* Increase font size for the main heading */
-  margin-bottom: 20px; /* Space below heading */
+  font-size: 3rem; 
+  margin-bottom: 20px; 
 }
 
 .about h2 {
-  font-size: 2rem; /* Subheading size */
-  margin-top: 20px; /* Space above subheading */
-  margin-bottom: 10px; /* Space below subheading */
+  font-size: 2rem; 
+  margin-top: 20px; 
+  margin-bottom: 10px; 
 }
 
 .about p {
-  font-size: 1.25rem; /* Standard paragraph size */
-  margin-bottom: 20px; /* Space below paragraphs */
+  font-size: 1.25rem; 
+  margin-bottom: 20px; 
 }
 
 /* Butterflies Section */
 .butterflies {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center align the butterfly cards */
-  margin-top: 20px; /* Add some space above the butterflies section */
+  justify-content: center; 
+  margin-top: 20px; 
 }
 
 .butterfly-card {
   margin: 20px;
   text-align: center;
   border: 1px solid #ccc;
-  border-radius: 12px; /* Rounded corners */
+  border-radius: 12px; 
   padding: 15px;
-  background-color: #ffffff; /* White background for contrast */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
-  max-width: 400px; /* Limit the width of the card */
-  overflow: hidden; /* Prevent overflow of child elements */
+  background-color: #ffffff; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+  max-width: 400px; 
 }
 
 .butterfly-card img {
-  border-radius: 12px; /* Rounded image */
-  width: 100%; /* Make images responsive */
-  height: auto; /* Maintain aspect ratio */
+  border-radius: 12px; 
+  width: 100%; 
+  height: auto; 
 }
-
-.butterfly-card h3 {
-  margin: 10px 0 5px; /* Spacing adjustments */
-  font-size: 1.5em; /* Larger font size */
-  color: var(--text-color);
-}
-
-/* Contact Page Styles */
 .contact {
+  padding: 20px;
   display: flex;
-  justify-content: center; /* Center the content */
-  align-items: flex-start; /* Align items at the start */
-  margin: 20px;
-  gap: 40px; /* Space between image and contact info */
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-content {
   display: flex;
-  width: 100%;
-  max-width: 1200px; /* Max width for large screens */
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* Space between image and form */
+  max-width: 800px; /* Limit max width */
+  width: 100%; /* Full width */
 }
 
 .butterfly-image {
-  flex: 1; /* Allow this div to take available space */
+  width: 100%; /* Full width on smaller screens */
+  display: flex;
+  justify-content: center; /* Center the image */
 }
 
 .contact-info {
-  flex: 1; /* Allow this div to take available space */
-  text-align: left; /* Left-align the text */
-  max-width: 400px; /* Limit the width of the contact info */
+  text-align: center; /* Center align text */
 }
 
 .contact-info h1 {
-  text-align: center; /* Center the heading */
+  font-size: 2rem; /* Adjust as needed */
 }
 
+.contact-info p {
+  font-size: 1rem; /* Adjust as needed */
+  margin-bottom: 20px; /* Space below paragraph */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between form elements */
+}
+
+label {
+  font-weight: bold; /* Make label bold */
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  cursor: pointer; /* Pointer on hover */
+}
+
+button:hover {
+  background-color: var(--secondary-color); /* Change on hover */
+}
+
+/* Social Links */
 .social-links {
   display: flex;
-  flex-direction: column; /* Stack links vertically */
-  gap: 10px; /* Space between links */
+  justify-content: center; /* Center align */
+  gap: 20px; /* Space between links */
 }
+
+.social-links a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .contact-content {
+    flex-direction: column; /* Stack elements */
+    padding: 10px; /* Adjust padding */
+  }
+}
+
 
 /* Footer Adjustments */
 .footer {
   display: flex;
   gap: 24px;
-  justify-content: center; /* Center links in footer */
+  justify-content: center;
   padding: 10px 0;
 }
-
-
